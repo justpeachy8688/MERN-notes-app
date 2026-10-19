@@ -1,15 +1,22 @@
 import express from "express";
 //const express = require("express");
 import notesRoutes from "./routes/notesRoutes.js";
+import { connectDB } from "./config/db.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 5001;
+
+connectDB();
 
 app.use("/api/notes", notesRoutes);
 
 /*
-
+mongodb+srv://<db_username>:jVOqEqBf3tVIDeFh@cluster0.is7ffxr.mongodb.net/
  */
 
-app.listen(5001, () => {
+app.listen(PORT, () => {
     console.log("Server started on PORT: 5001");
 });
