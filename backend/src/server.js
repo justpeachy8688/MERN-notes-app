@@ -1,6 +1,6 @@
 import express from "express";
 //const express = require("express");
-import notesRoutes from "./routes/notesRoutes.js"
+import notesRoutes from "./routes/notesRoutes.js";
 
 const app = express();
 
